@@ -1,4 +1,4 @@
-System.register(['angular2/core', './mock-heroes'], function(exports_1, context_1) {
+System.register(['@angular/core', './mock-heroes'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29,8 +29,11 @@ System.register(['angular2/core', './mock-heroes'], function(exports_1, context_
                 };
                 HeroService.prototype.getHeroesSlowly = function () {
                     return new Promise(function (resolve) {
-                        return setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 2000);
+                        return setTimeout(function () { return resolve(mock_heroes_1.HEROES); }, 500);
                     });
+                };
+                HeroService.prototype.getHero = function (id) {
+                    return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
                 };
                 HeroService = __decorate([
                     core_1.Injectable(), 

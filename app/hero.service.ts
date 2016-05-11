@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {HEROES} from './mock-heroes';
 import {Hero} from './hero';
 
@@ -10,7 +10,14 @@ export class HeroService {
 
 	getHeroesSlowly() {
 		return new Promise<Hero[]>(resolve => 
-			setTimeout(()=>resolve(HEROES), 2000)
+			setTimeout(()=>resolve(HEROES), 500)
 		);
 	}
+
+	getHero(id: number) {
+		return Promise.resolve(HEROES).then(
+			heroes => heroes.filter(hero => hero.id === id)[0]
+		);
+	}
+
 }
