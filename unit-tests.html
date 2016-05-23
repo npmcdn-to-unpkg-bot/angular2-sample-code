@@ -10,12 +10,12 @@
 
   <script src="node_modules/systemjs/dist/system.src.js"></script>
   <script src="systemjs.config.js"></script>
-  
+
   <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
   <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
   <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
 
-  
+
 </head>
 <body>
 
@@ -24,14 +24,14 @@
     //     for imports from the app folder
     System.config({
       packages: {
-        'app': {defaultExtension: 'js'}
+        'dist/app': {defaultExtension: 'js'}
       }
     });
 
     // #2. Import the spec files explicitly
 	  Promise.all([
-	    System.import('app/hero.spec'),
-	    System.import('app/my-uppercase.pipe.spec')
+	    System.import('dist/app/hero.spec'),
+	    System.import('dist/app/my-uppercase.pipe.spec')
 	  ])
 
 	    // #3. wait for all imports to load ...
