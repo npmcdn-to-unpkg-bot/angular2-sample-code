@@ -1,9 +1,11 @@
 {
   "name": "angular2-quickstart",
   "version": "1.0.0",
+  "author": "Sam Yue",
   "scripts": {
     "start": "gulp",
     "postinstall": "typings install",
+    "pretest": "gulp build",
     "test": "live-server --open=unit-tests.html"
   },
   "license": "ISC",
