@@ -4,3 +4,4 @@
 app/**/*.js
 app/**/*.map
 npm-debug.log
+/bower_components

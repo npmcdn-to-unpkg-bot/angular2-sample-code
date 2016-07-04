@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HeroesComponent} from './heroes.component';
 import {DashboardComponent} from './dashboard.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { PolymerComponent } from './polymer.component';
 
 import {HeroService} from './hero.service';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
@@ -15,6 +16,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-
       <nav>
         <a [routerLink]="['Dashboard']">Dashboard</a>
         <a [routerLink]="['Heroes']">Heroes</a>
+        <a [routerLink]="['Polymer Experiments']">Polymer Experiments</a>
       </nav>
     <router-outlet></router-outlet>
     `,
@@ -33,14 +35,20 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-
     {
         path: '/dashboard',
         name: 'Dashboard',
-        component: DashboardComponent,
-        useAsDefault: true
+        component: DashboardComponent
+
     },
 
     {
         path: '/heroes',
         name: 'Heroes',
         component: HeroesComponent
+    },
+    {
+        path: '/',
+        name: 'Polymer Experiments',
+        component: PolymerComponent,
+        useAsDefault: true
     }
 
 ])

@@ -12,4 +12,10 @@
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
-	
+
+<button (click)="addHero()">Add New Hero</button>
+<div *ngIf="addingHero">
+  <my-hero-detail (close)="close($event)"></my-hero-detail>
+</div>
+<button class="delete-button" (click)="delete(hero, $event)">Delete</button>
+

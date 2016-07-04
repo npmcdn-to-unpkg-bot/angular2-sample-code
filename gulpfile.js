@@ -34,7 +34,7 @@ gulp.task('compile', ['clean'], function() {
 //copy
 gulp.task('copy', ['clean'], function() {
 	return gulp.src([
-			'app/**/*', 'index.html', 'styles.css', 'systemjs.config.js', '!app/**/*.ts'
+			'app/**/*', 'index.html', 'styles.css', 'systemjs.config.js', '!app/**/*.ts', 'bower_components/**/*'
 		], {base: './'})
 		.pipe(gulp.dest('dist'));
 
